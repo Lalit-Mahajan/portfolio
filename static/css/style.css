@@ -1,0 +1,287 @@
+/* ===============================
+GLOBAL STYLES
+================================= */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+}
+
+
+/* ===============================
+   HERO SECTION
+================================= */
+.hero {
+    min-height: 100vh;
+    padding: 120px 80px 60px;
+    display: flex;
+    align-items: center;
+
+    /* Gradient Background */
+    background:
+        radial-gradient(circle at 20% 10%, rgba(88, 145, 236, 0.6), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.4), transparent 40%),
+        linear-gradient(to bottom, #1e3a8a 0%, #0f172a 100%);
+}
+
+/* Heading */
+.hero h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+}
+
+/* Paragraph */
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.hero .btn {
+    padding: 10px 22px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+/* ===============================
+   TEXT HIGHLIGHT
+================================= */
+.highlight {
+    color: #22d3ee;
+}
+
+/* Typing Cursor */
+.cursor {
+    display: inline-block;
+    margin-left: 5px;
+    color: #22d3ee;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ===============================
+   PROFILE IMAGE
+================================= */
+.image-box {
+    background: linear-gradient(45deg, #7c3aed, #22d3ee);
+    padding: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50% / 40%;
+}
+
+
+/* ===============================
+BUTTON STYLE
+================================= */
+.btn-primary {
+    background: linear-gradient(45deg, #7c3aed, #22d3ee);
+    border: none;
+}
+
+
+/* ===============================
+   FOLLOW ME (RIGHT SIDE)
+================================= */
+.follow-me {
+    position: absolute;
+    right: 20px;
+    top: 55%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.follow-me p {
+    writing-mode: vertical-rl;
+    font-size: 11px;
+    color: white;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.follow-me a {
+    display: block;
+    color: white;
+    margin: 12px 0;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.follow-me a:hover {
+    color: #22d3ee;
+    transform: scale(1.2);
+}
+
+
+/* ===============================
+   SCROLL DOWN
+================================= */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+
+/* ===============================
+   NAVBAR
+================================= */
+.navbar {
+    background: transparent !important;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Brand */
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: white !important;
+    transition: 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #22d3ee !important;
+    text-shadow: 0 0 10px #22d3ee;
+}
+
+/* Links */
+.nav-link {
+    color: white !important;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #22d3ee !important;
+    text-shadow: 0 0 8px #22d3ee;
+}
+
+/* ===============================
+   📱 MOBILE (≤576px)
+================================= */
+@media (max-width: 576px) {
+
+    .hero {
+        padding: 30px 15px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 250px;
+        margin-top: 25px;
+    }
+
+    .image-box {
+        padding: 8px;
+    }
+
+    .hero .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .follow-me {
+        display: none;
+    }
+
+    .scroll-down {
+        font-size: 12px;
+    }
+}
+
+
+/* ===============================
+   📲 TABLET (577px – 991px)
+================================= */
+@media (min-width: 577px) and (max-width: 991px) {
+
+    .hero {
+        padding: 50px 30px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .profile-img {
+        width: 260px;
+        height: 320px;
+        margin-top: 30px;
+    }
+
+    .follow-me {
+        right: 10px;
+    }
+}
+
+
+/* ===============================
+   📱 NAVBAR MOBILE MENU FIX
+================================= */
+@media (max-width: 991px) {
+
+    .navbar-collapse {
+        background: rgba(15, 23, 42, 0.95);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(1);
+    }
+}
