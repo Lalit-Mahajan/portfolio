@@ -191,7 +191,7 @@ BUTTON STYLE
 @media (max-width: 576px) {
 
     .hero {
-        padding: 30px 15px;
+        padding: 80px 15px 40px;
         text-align: center;
         justify-content: center;
     }
