@@ -1,77 +1,102 @@
 /* ===============================
-GLOBAL STYLES
+   GLOBAL
 ================================= */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
     background: #0f172a;
+}
+
+/* FIX FOR FIXED NAVBAR */
+section {
+    scroll-margin-top: 80px;
 }
 
 
 /* ===============================
-   HERO SECTION
+   NAVBAR
+================================= */
+.navbar {
+    background: rgba(15, 23, 42, 0.7) !important;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 26px;
+    font-weight: 700;
+    color: white !important;
+}
+
+.navbar-brand:hover {
+    color: #22d3ee !important;
+}
+
+.nav-link {
+    color: white !important;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #22d3ee !important;
+}
+
+
+/* ===============================
+   HERO SECTION (FIXED HEIGHT)
 ================================= */
 .hero {
-    min-height: 100vh;
-    padding: 120px 80px 60px;
+    min-height: calc(110vh - 70px);
+    padding: 50px 80px;
     display: flex;
     align-items: center;
+    box-sizing: border-box;
 
-    /* Gradient Background */
     background:
-        radial-gradient(circle at 20% 10%, rgba(88, 145, 236, 0.6), transparent 40%),
-        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.4), transparent 40%),
+        radial-gradient(circle at 20% 10%, rgba(88, 145, 236, 0.6), transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.4), transparent 60%),
         linear-gradient(to bottom, #1e3a8a 0%, #0f172a 100%);
+
 }
 
-/* Heading */
 .hero h1 {
     font-size: 3.2rem;
-    line-height: 1.2;
 }
 
-/* Paragraph */
 .hero p {
     font-size: 1.1rem;
     opacity: 0.9;
 }
 
-/* Buttons */
 .hero .btn {
     padding: 10px 22px;
-    font-size: 14px;
-    margin-bottom: 10px;
 }
 
 
 /* ===============================
-   TEXT HIGHLIGHT
+   TEXT / EFFECTS
 ================================= */
 .highlight {
     color: #22d3ee;
 }
 
-/* Typing Cursor */
 .cursor {
-    display: inline-block;
     margin-left: 5px;
     color: #22d3ee;
     animation: blink 1s infinite;
 }
 
 @keyframes blink {
-    0% {
-        opacity: 1;
-    }
-
     50% {
         opacity: 0;
     }
-
-    100% {
-        opacity: 1;
-    }
 }
+
 
 /* ===============================
    PROFILE IMAGE
@@ -93,7 +118,7 @@ body {
 
 
 /* ===============================
-BUTTON STYLE
+   BUTTON
 ================================= */
 .btn-primary {
     background: linear-gradient(45deg, #7c3aed, #22d3ee);
@@ -102,22 +127,21 @@ BUTTON STYLE
 
 
 /* ===============================
-   FOLLOW ME (RIGHT SIDE)
+   FOLLOW ME
 ================================= */
 .follow-me {
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 55%;
     transform: translateY(-50%);
     text-align: center;
+    z-index: 900;
 }
 
 .follow-me p {
     writing-mode: vertical-rl;
     font-size: 11px;
     color: white;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
     opacity: 0.7;
 }
 
@@ -125,163 +149,377 @@ BUTTON STYLE
     display: block;
     color: white;
     margin: 12px 0;
-    font-size: 18px;
-    transition: 0.3s;
 }
 
 .follow-me a:hover {
     color: #22d3ee;
-    transform: scale(1.2);
 }
 
 
 /* ===============================
-   SCROLL DOWN
+   SECTION NAV (FIXED POSITION)
 ================================= */
-.scroll-down {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+.section-nav {
+    position: fixed;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1100;
+}
+
+.nav-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #7c3aed, #22d3ee);
     color: white;
-    font-size: 14px;
-    opacity: 0.7;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.7);
+}
+
+.nav-btn.up:active {
+    transform: translateY(-6px) scale(0.95);
+}
+
+.nav-btn.down:active {
+    transform: translateY(6px) scale(0.95);
 }
 
 
 /* ===============================
-   NAVBAR
+   ABOUT SECTION
 ================================= */
-.navbar {
-    background: transparent !important;
+.about-hero {
+    min-height: 100vh;
+    padding: 120px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 20% 10%, rgba(88, 145, 236, 0.6), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.4), transparent 40%),
+        linear-gradient(to bottom, #1e3a8a 0%, #0f172a 100%);
+}
+
+.about-title {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.about-intro {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+
+/* ===============================
+   EDUCATION SECTION
+================================= */
+.education-section {
+    min-height: calc(100vh - 80px);
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.section-heading {
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.timeline {
+    position: relative;
+    margin-top: 50px;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: "";
     position: absolute;
+    left: 25px;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(#22d3ee, #7c3aed);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+.timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -15px;
+    top: 0;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #7c3aed, #22d3ee);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6px;
+}
+
+.timeline-icon img {
     width: 100%;
-    z-index: 10;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background: white;
 }
 
-/* Brand */
-.navbar-brand {
-    font-family: 'Poppins', sans-serif;
-    font-size: 26px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    color: white !important;
+.timeline-content {
+    margin-left: 110px;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+}
+
+
+/* ===============================
+   SKILLS SECTION (UPDATED)
+================================= */
+.skills-section {
+    min-height: calc(100vh - 80px);
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, #0f172a, #020617);
+}
+
+/* GRID CONTROL (important for 2x2 layout) */
+.skills-section .row {
+    width: 100%;
+    justify-content: center;
+}
+
+/* CARD */
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 25px;
+    /* bigger for clean look */
+    border-radius: 15px;
     transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+
+    text-align: center;
+    height: 100%;
+    /* equal height */
 }
 
-.navbar-brand:hover {
-    color: #22d3ee !important;
-    text-shadow: 0 0 10px #22d3ee;
+/* TITLE */
+.skill-card h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-/* Links */
-.nav-link {
-    color: white !important;
-    transition: 0.3s;
+/* TEXT */
+.skill-card p {
+    font-size: 14px;
+    opacity: 0.8;
 }
 
-.nav-link:hover {
-    color: #22d3ee !important;
-    text-shadow: 0 0 8px #22d3ee;
+/* REMOVE ICONS COMPLETELY */
+.skill-card i {
+    display: none;
+}
+
+.skill-icons {
+    display: none;
+}
+
+/* HOVER (simple & clean) */
+.skill-card:hover {
+    transform: translateY(-6px);
+    /* less aggressive */
+    box-shadow: 0 8px 20px rgba(34, 211, 238, 0.2);
+    border-color: #22d3ee;
 }
 
 /* ===============================
-   📱 MOBILE (≤576px)
+   CONTACT SECTION SIMPLE UI
+================================= */
+.contact-section {
+    min-height: 100vh;
+    padding: 10px 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 20% 10%, rgba(88, 145, 236, 0.3), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.2), transparent 40%),
+        linear-gradient(to bottom, #020617, #000000);
+}
+
+/* CARD */
+.contact-box {
+    max-width: 520px;
+    width: 100%;
+    padding: 50px 30px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    text-align: center;
+}
+
+/* INLINE ROW */
+.contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+/* TEXT */
+.contact-row span {
+    font-size: 15px;
+}
+
+.contact-row i {
+    color: #22d3ee;
+    margin-right: 8px;
+}
+
+/* LINKS */
+.contact-link {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    color: #22d3ee;
+}
+
+/* WHATSAPP BUTTON (LIKE IMAGE) */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 22px;
+    border-radius: 40px;
+
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+/* SIMPLE HOVER */
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+}
+
+/* ===============================
+   PROJECTS PAGE
+================================= */
+.projects-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(circle at 20% 10%, rgba(88, 145, 236, 0.3), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.2), transparent 40%),
+        linear-gradient(to bottom, #020617, #000000);
+}
+
+/* CARD */
+.project-card {
+    display: block;
+    padding: 35px 20px;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    text-decoration: none;
+    color: white;
+
+    transition: 0.3s;
+}
+
+/* ICON */
+.project-card i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* TEXT */
+.project-card p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* HOVER */
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #22d3ee;
+    box-shadow: 0 10px 25px rgba(34, 211, 238, 0.2);
+}
+
+/* ===============================
+   MOBILE
 ================================= */
 @media (max-width: 576px) {
 
     .hero {
-        padding: 80px 15px 40px;
+        padding: 60px 15px;
         text-align: center;
-        justify-content: center;
     }
 
     .hero h1 {
         font-size: 1.8rem;
     }
 
-    .hero p {
-        font-size: 0.9rem;
-    }
-
     .profile-img {
         width: 200px;
-        height: 250px;
-        margin-top: 25px;
-    }
-
-    .image-box {
-        padding: 8px;
-    }
-
-    .hero .btn {
-        width: 100%;
-        margin-bottom: 10px;
+        margin-top: 20px;
     }
 
     .follow-me {
         display: none;
     }
 
-    .scroll-down {
-        font-size: 12px;
-    }
-}
-
-
-/* ===============================
-   📲 TABLET (577px – 991px)
-================================= */
-@media (min-width: 577px) and (max-width: 991px) {
-
-    .hero {
-        padding: 50px 30px;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 2.4rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .profile-img {
-        width: 260px;
-        height: 320px;
-        margin-top: 30px;
-    }
-
-    .follow-me {
-        right: 10px;
-    }
-}
-
-
-/* ===============================
-   📱 NAVBAR MOBILE MENU FIX
-================================= */
-@media (max-width: 991px) {
-
-    .navbar-collapse {
-        background: rgba(15, 23, 42, 0.95);
-        padding: 15px;
-        border-radius: 10px;
-        margin-top: 10px;
-    }
-
-    .nav-link {
-        display: block;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .navbar-toggler {
-        border: none;
-    }
-
-    .navbar-toggler-icon {
-        filter: invert(1);
+    .about-intro {
+        font-size: 1.2rem;
     }
 }

@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<section class="hero d-flex align-items-center position-relative">
+<!-- ================= HERO ================= -->
+<section class="hero d-flex align-items-center position-relative" id="home">
 
-    <!-- FOLLOW ME -->
     <div class="follow-me">
         <p>FOLLOW ME</p>
         <a href="https://www.linkedin.com/in/lalit-mahajan-a83550252/"><i class="bi bi-linkedin"></i></a>
@@ -15,14 +15,9 @@
     <div class="container">
         <div class="row align-items-center gy-5">
 
-            <!-- LEFT -->
             <div class="col-lg-6 col-md-12 text-white">
                 <p class="text-info">Welcome to my portfolio!</p>
 
-                <!-- <h1 class="fw-bold display-4">
-                    Hello, my <br>
-                    name’s <span class="highlight">Lalit</span>.
-                </h1> -->
                 <h1 class="fw-bold display-4">
                     <span id="typing-text"></span><span class="cursor">|</span>
                 </h1>
@@ -34,11 +29,12 @@
                 <div class="mt-4">
                     <a href="{{url_for('static', filename='resume/resume.pdf')}}" class="btn btn-primary me-3"
                         download>Download CV</a>
-                    <button class="btn btn-outline-light">See my work</button>
+
+                    <!-- 👇 SCROLL BUTTON -->
+                    <a href="/project" class="btn btn-outline-light">See My Work</a>
                 </div>
             </div>
 
-            <!-- RIGHT -->
             <div class="col-lg-6 col-md-12 text-center">
                 <div class="image-box">
                     <img src="{{ url_for('static', filename='images/profile.jpeg') }}" class="profile-img">
@@ -47,12 +43,181 @@
 
         </div>
     </div>
+</section>
 
-    <!-- SCROLL DOWN -->
-    <div class="scroll-down">
-        <p>Scroll Down</p>
+
+<!-- ================= ABOUT INTRO ================= -->
+<section class="about-hero" id="about">
+
+    <div class="container text-white">
+
+        <h2 class="about-title">About</h2>
+
+        <p class="about-intro">
+            Passionate <span class="highlight">Full Stack Developer</span> with expertise in
+            Java, MERN Stack, and Cloud technologies. Currently working at
+            WT Windo Consultancy, building modern, scalable,
+            and user-friendly web applications focused on real-world solutions.
+        </p>
+    </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="education-section" id="education">
+
+    <div class="container text-white">
+
+        <h2 class="section-heading text-center mb-5">Education</h2>
+
+        <div class="timeline">
+
+            <!-- ITEM 1 -->
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    <img src="{{ url_for('static', filename='images/ten.jpeg') }}" alt="school">
+                </div>
+
+                <div class="timeline-content">
+                    <h5>10th - 2018</h5>
+                    <p>P B M Municipal High School</p>
+                    <span>93%</span>
+                </div>
+
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    <img src="{{ url_for('static', filename='images/12.jpg') }}" alt="college">
+                </div>
+
+                <div class="timeline-content">
+                    <h5>12th - 2020</h5>
+                    <p>R C Patel College</p>
+                    <span>84.15%</span>
+                </div>
+
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    <img src="{{ url_for('static', filename='images/eng.png') }}" alt="btech">
+                </div>
+
+                <div class="timeline-content">
+                    <h5>B.Tech - 2024</h5>
+                    <p>R C Patel Institute of Technology</p>
+                    <span>8.44 CGPA</span>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
 </section>
+
+<!-- ================= SKILLS ================= -->
+<section class="skills-section" id="skills">
+
+    <div class="container text-white">
+
+        <h2 class="section-heading text-center mb-5">Skills</h2>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- FRONTEND -->
+            <div class="col-lg-5 col-md-6">
+                <div class="skill-card text-center">
+                    <h5>Frontend</h5>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+            </div>
+
+            <!-- BACKEND -->
+            <div class="col-lg-5 col-md-6">
+                <div class="skill-card text-center">
+                    <h5>Backend</h5>
+                    <p>Python, Java</p>
+                </div>
+            </div>
+
+            <!-- TOOLS -->
+            <div class="col-lg-5 col-md-6">
+                <div class="skill-card text-center">
+                    <h5>Framework / Tools</h5>
+                    <p>React, AWS, DevOps</p>
+                </div>
+            </div>
+
+            <!-- DATABASE -->
+            <div class="col-lg-5 col-md-6">
+                <div class="skill-card text-center">
+                    <h5>Database</h5>
+                    <p>MySQL, MongoDB</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact section -->
+<section class="contact-section d-flex align-items-center justify-content-center" id="contact">
+
+    <div class="container text-white text-center">
+
+        <h2 class="section-heading mb-5">Contact Me</h2>
+
+        <div class="contact-box mx-auto">
+
+            <h4 class="mb-4">Get in Touch</h4>
+
+            <!-- INLINE CONTACT INFO -->
+            <div class="contact-row">
+
+                <span>
+                    <i class="bi bi-envelope-fill"></i>
+                    <a href="mailto:lalitmahajan183@gmail.com" class="contact-link">
+                        lalitmahajan183@gmail.com
+                    </a>
+                </span>
+
+                <span>
+                    <i class="bi bi-telephone-fill"></i>
+                    <a href="tel:+917028985376" class="contact-link">
+                        +91 7028985376
+                    </a>
+                </span>
+
+            </div>
+
+            <!-- WHATSAPP BUTTON (LIKE IMAGE) -->
+            <a href="https://wa.me/917028985376?text=Hello%20Lalit" target="_blank" class="whatsapp-btn">
+                <i class="bi bi-whatsapp"></i> WhatsApp Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="section-nav">
+    <button onclick="scrollUp()" class="nav-btn up">
+        <i class="bi bi-arrow-up-circle-fill"></i>
+    </button>
+    <button onclick="scrollDown()" class="nav-btn down">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+    </button>
+</div>
+
+
 
 {% endblock %}
