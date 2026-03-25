@@ -496,30 +496,124 @@ section {
     box-shadow: 0 10px 25px rgba(34, 211, 238, 0.2);
 }
 
+
 /* ===============================
-   MOBILE
+   MOBILE PERFECT UI FIX
 ================================= */
 @media (max-width: 576px) {
 
+    /* HERO SECTION */
     .hero {
-        padding: 60px 15px;
+        padding: 80px 20px 40px;
         text-align: center;
+        min-height: auto;
     }
 
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        line-height: 1.3;
     }
 
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* PROFILE IMAGE */
     .profile-img {
-        width: 200px;
-        margin-top: 20px;
+        width: 220px;
+        margin-top: 25px;
     }
 
+    /* FOLLOW REMOVE */
     .follow-me {
         display: none;
     }
 
+    /* SECTION HEADING */
+    .section-heading {
+        font-size: 2rem;
+        margin-bottom: 30px !important;
+    }
+
+    /* ABOUT TEXT */
     .about-intro {
         font-size: 1.2rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    /* EDUCATION */
+    .timeline-content {
+        margin-left: 80px;
+    }
+
+    .timeline-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    /* SKILLS (2x2 FIX) */
+    .skills-section {
+        padding: 40px 15px;
+    }
+
+    .skill-card {
+        padding: 25px 15px;
+    }
+
+    .skill-card h5 {
+        font-size: 18px;
+    }
+
+    .skill-card p {
+        font-size: 13px;
+    }
+
+    /* PROJECTS GRID */
+    .projects-section {
+        padding: 80px 15px;
+    }
+
+    .project-card {
+        padding: 25px 15px;
+    }
+
+    .project-card i {
+        font-size: 32px;
+    }
+
+    /* CONTACT */
+    .contact-section {
+        padding: 20px 15px 50px;
+    }
+
+    .contact-box {
+        padding: 30px 20px;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .whatsapp-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* FLOAT BUTTON FIX */
+    .section-nav {
+        right: 10px;
+    }
+
+    .nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
     }
 }
